@@ -1,0 +1,18 @@
+{% extends 'user/base.html' %}
+{%block content%}
+<h1>login</h1>
+{% comment %}
+
+{% if form.errors %}
+<p>{{form.errors.error}}</p>
+{% endif%}
+
+{%endcomment%}
+
+<form action="{% url 'user:login' %}" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">войти</button>
+</form>
+
+{%endblock%}
