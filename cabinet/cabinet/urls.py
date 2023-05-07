@@ -21,5 +21,7 @@ from user.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('user/', include('user.urls', namespace='user'))
+    # path('', include('django.contrib.auth.urls'),name='user'),
+    path('', include('user.urls', namespace='user')),
+    path('', include('main.urls', namespace='main'))
 ]
